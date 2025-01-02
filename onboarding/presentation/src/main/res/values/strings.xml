@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">Hello!, Let\'s find out more about you:)</string>
+    <string name="get_started">Next</string>
+    <string name="what_gender">What is your gender?</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="next">Next</string>
+    <string name="your_age">What\'s your age?</string>
+    <string name="age">years</string>
+    <string name="years">years</string>
+    <string name="your_height">what\'s your height?</string>
+    <string name="cm">cm</string>
+    <string name="your_weight">What\'s your weight?</string>
+    <string name="kg">kg</string>
+    <string name="activity_level">What\'s your activity level?</string>
+    <string name="low">Low</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
+    <string name="lose">Lose</string>
+    <string name="keep">Keep</string>
+    <string name="gain">Gain</string>
+    <string name="lose_keep_gain_weight">Do you want to lose, keep or gain weight?</string>
+    <string name="nutrient_goals">What are your nutrient goals?</string>
+    <string name="carbs">% carbs</string>
+    <string name="proteins">% proteins</string>
+    <string name="fats">% fats</string>
+</resources>

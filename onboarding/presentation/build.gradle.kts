@@ -14,4 +14,6 @@ dependencies {
 
     implementation(projects.core.domain)
     implementation(projects.onboarding.domain)
+    implementation(projects.core.presentation.designsystem)
+    implementation(projects.core.presentation.ui)
 }
