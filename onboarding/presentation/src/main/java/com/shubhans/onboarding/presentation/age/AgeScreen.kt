@@ -40,18 +40,19 @@ fun AgeScreen(
         viewModel.uiEvent.collect { event ->
             when (event) {
                 is UiEvent.Success -> onNextClick()
-                is UiEvent.showSnackbarMessage ->{
+                is UiEvent.showSnackbarMessage -> {
                     snackBarHostState.showSnackbar(
-                        message = event.message)
+                        message = event.message
+                    )
                 }
-                else ->{}
+
+                else -> {}
             }
         }
     }
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(spacing.spaceLarge)
             .background(MaterialTheme.colorScheme.background)
     ) {
         Column(
@@ -66,7 +67,7 @@ fun AgeScreen(
             )
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
             UnitTextField(
-                value = "20",
+                value = viewModel.age,
                 onValueChange = {},
                 unit = stringResource(R.string.years)
             )

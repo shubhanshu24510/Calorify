@@ -26,4 +26,7 @@
     <string name="proteins">% proteins</string>
     <string name="fats">% fats</string>
     <string name="invalid_age">Age Can\'t be empty.</string>
+    <string name="weight_cant_be_empty">The weight can\'t be empty</string>
+    <string name="age_cant_be_empty">The age can\'t be empty</string>
+    <string name="height_can_not_be_empty">The height can\'t be empty</string>
 </resources>

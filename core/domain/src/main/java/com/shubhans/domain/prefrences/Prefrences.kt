@@ -12,9 +12,9 @@ interface Prefrences {
     fun saveWeight(weight: Float)
     fun saveActivityLevel(activityLevel: ActivityLevel)
     fun saveGoal(goalType: GoalType)
-    fun saveCarbsRatio(carbsRatio: Int)
-    fun saveProteinsRatio(proteinsRatio: Int)
-    fun saveFatsRatio(fatsRatio: Int)
+    fun saveCarbsRatio(carbsRatio: Float)
+    fun saveProteinsRatio(proteinsRatio: Float)
+    fun saveFatsRatio(fatsRatio: Float)
 
     fun saveUserInfo(userInfo: UserInfo)
 
