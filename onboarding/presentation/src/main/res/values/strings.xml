@@ -25,4 +25,5 @@
     <string name="carbs">% carbs</string>
     <string name="proteins">% proteins</string>
     <string name="fats">% fats</string>
+    <string name="invalid_age">Age Can\'t be empty.</string>
 </resources>
