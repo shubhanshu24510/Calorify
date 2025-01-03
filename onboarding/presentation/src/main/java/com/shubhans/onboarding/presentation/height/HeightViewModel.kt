@@ -1,9 +1,8 @@
-package com.shubhans.onboarding.presentation.age
+package com.shubhans.onboarding.presentation.height
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shubhans.core.presentation.utils.UiEvent
@@ -15,33 +14,33 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-class AgeScreenViewModel(
+class HeightViewModel(
     private val preference: Prefrences,
     private val filterOutDigit: FitterOutDigit
 ) : ViewModel() {
-    var age by mutableStateOf("20")
+    var height by mutableStateOf("180")
         private set
 
     private val _uiEvent = Channel<UiEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
-    fun onAgeEnter(age: String) {
-        if (age.length <= 3) {
-            this.age = filterOutDigit(age)
+    fun onHeightEnter(age: String) {
+        if (height.length <= 3) {
+            this.height = filterOutDigit(height)
         }
     }
 
     fun OnNextClick() {
         viewModelScope.launch {
-            val ageNumber = age.toIntOrNull() ?: run {
+            val heightNumber = height.toIntOrNull() ?: run {
                 _uiEvent.send(
                     UiEvent.showSnackbarMessage(
-                        UiText.StringResource(R.string.age_cant_be_empty).toString()
+                        UiText.StringResource(R.string.height_can_not_be_empty).toString()
                     )
                 )
                 return@launch
             }
-            preference.saveAge(ageNumber)
+            preference.saveAge(heightNumber)
             _uiEvent.send(UiEvent.Success)
         }
     }

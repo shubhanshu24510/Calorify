@@ -21,15 +21,13 @@ import com.shubhans.onboarding.presentation.components.ActionButton
 
 @Composable
 fun WelcomeScreen(
-    modifier: Modifier = Modifier,
-    onNextClick: () -> Unit = {}
+    onNextClick: () -> Unit
 ) {
     val spacing = LocalSpacing.current
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(spacing.spaceMedium)
             .background(MaterialTheme.colorScheme.background),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -55,6 +53,8 @@ fun WelcomeScreen(
 @Composable
 private fun WelcomeScreenPreview() {
     CalorifyTheme {
-        WelcomeScreen()
+        WelcomeScreen(
+            onNextClick = {}
+        )
     }
 }

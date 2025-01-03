@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.calorify.android.application.compose)
-    alias(libs.plugins.calorify.jvm.retrofit)
+//    alias(libs.plugins.calorify.jvm.retrofit)
 }
 
 android {
@@ -8,6 +8,9 @@ android {
 
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
     packaging {
         resources {

@@ -20,20 +20,21 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.shubhans.core.presentation.design_system.CalorifyTheme
 import com.shubhans.core.presentation.design_system.LocalSpacing
+import com.shubhans.domain.model.GoalType
 import com.shubhans.onboarding.presentation.R
 import com.shubhans.onboarding.presentation.components.ActionButton
 import com.shubhans.onboarding.presentation.components.SelectableButton
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun GoalScreen(
-    modifier: Modifier = Modifier,
+    viewModel: GoalViewModel = koinViewModel(),
     onNextClick: () -> Unit = {}
 ) {
     val spacing = LocalSpacing.current
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(spacing.spaceLarge)
             .background(MaterialTheme.colorScheme.background),
     ) {
         Column(
@@ -57,7 +58,9 @@ fun GoalScreen(
                     isSelected = false,
                     color = MaterialTheme.colorScheme.primaryContainer,
                     selectedTextColor = Color.White,
-                    onClick = {},
+                    onClick = {
+                        viewModel.onGoalLevelSelected(GoalType.Lose)
+                    },
                     textStyle = MaterialTheme.typography.bodyLarge.copy(
                         fontWeight = FontWeight.Normal
                     )
@@ -67,7 +70,9 @@ fun GoalScreen(
                     isSelected = false,
                     color = MaterialTheme.colorScheme.primaryContainer,
                     selectedTextColor = Color.White,
-                    onClick = {},
+                    onClick = {
+                        viewModel.onGoalLevelSelected(GoalType.Keep)
+                    },
                     textStyle = MaterialTheme.typography.bodyLarge.copy(
                         fontWeight = FontWeight.Normal
                     )
@@ -77,7 +82,9 @@ fun GoalScreen(
                     isSelected = false,
                     color = MaterialTheme.colorScheme.primaryContainer,
                     selectedTextColor = Color.White,
-                    onClick = {},
+                    onClick = {
+                        viewModel.onGoalLevelSelected(GoalType.Gain)
+                    },
                     textStyle = MaterialTheme.typography.bodyLarge.copy(
                         fontWeight = FontWeight.Normal
                     )
@@ -86,7 +93,7 @@ fun GoalScreen(
         }
         ActionButton(
             text = stringResource(R.string.next),
-            onClick = { onNextClick() },
+            onClick = { viewModel::OnNextClick },
             modifier = Modifier
                 .align(Alignment.BottomEnd)
         )

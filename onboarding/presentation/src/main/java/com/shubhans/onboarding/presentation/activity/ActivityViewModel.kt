@@ -1,47 +1,35 @@
-package com.shubhans.onboarding.presentation.age
+package com.shubhans.onboarding.presentation.activity
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shubhans.core.presentation.utils.UiEvent
 import com.shubhans.core.presentation.utils.UiText
+import com.shubhans.domain.model.ActivityLevel
 import com.shubhans.domain.prefrences.Prefrences
-import com.shubhans.domain.usecases.FitterOutDigit
 import com.shubhans.onboarding.presentation.R
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-class AgeScreenViewModel(
-    private val preference: Prefrences,
-    private val filterOutDigit: FitterOutDigit
+class ActivityViewModel(
+    private val prefrences: Prefrences
 ) : ViewModel() {
-    var age by mutableStateOf("20")
+    var selectedActivityLevel by mutableStateOf<ActivityLevel>(ActivityLevel.Medium)
         private set
 
     private val _uiEvent = Channel<UiEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
-    fun onAgeEnter(age: String) {
-        if (age.length <= 3) {
-            this.age = filterOutDigit(age)
-        }
+    fun onActivityLevelSelected(level: ActivityLevel) {
+        selectedActivityLevel = level
     }
 
     fun OnNextClick() {
         viewModelScope.launch {
-            val ageNumber = age.toIntOrNull() ?: run {
-                _uiEvent.send(
-                    UiEvent.showSnackbarMessage(
-                        UiText.StringResource(R.string.age_cant_be_empty).toString()
-                    )
-                )
-                return@launch
-            }
-            preference.saveAge(ageNumber)
+            prefrences.saveActivityLevel(selectedActivityLevel)
             _uiEvent.send(UiEvent.Success)
         }
     }
