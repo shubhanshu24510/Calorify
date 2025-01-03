@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.calorify.android.library)
-    alias(libs.plugins.calorify.jvm.retrofit)
+//    alias(libs.plugins.calorify.jvm.retrofit)
 }
 
 android {
