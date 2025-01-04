@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shubhans.core.presentation.utils.UiEvent
 import com.shubhans.core.presentation.utils.UiText
-import com.shubhans.domain.prefrences.Prefrences
+import com.shubhans.domain.prefrences.Preferences
 import com.shubhans.domain.usecases.FitterOutDigit
 import com.shubhans.onboarding.presentation.R
 import kotlinx.coroutines.channels.Channel
@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 class HeightViewModel(
-    private val preference: Prefrences,
+    private val preference: Preferences,
     private val filterOutDigit: FitterOutDigit
 ) : ViewModel() {
     var height by mutableStateOf("180")
@@ -40,7 +40,7 @@ class HeightViewModel(
                 )
                 return@launch
             }
-            preference.saveAge(heightNumber)
+            preference.saveHeight(heightNumber)
             _uiEvent.send(UiEvent.Success)
         }
     }

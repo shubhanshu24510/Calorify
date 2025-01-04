@@ -7,14 +7,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shubhans.core.presentation.utils.UiEvent
 import com.shubhans.core.presentation.utils.UiText
-import com.shubhans.domain.prefrences.Prefrences
+import com.shubhans.domain.prefrences.Preferences
 import com.shubhans.onboarding.presentation.R
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 class WeightViewModel(
-    private val preference: Prefrences
+    private val preference: Preferences
 ) : ViewModel() {
 
     var weight by mutableStateOf("80.0")

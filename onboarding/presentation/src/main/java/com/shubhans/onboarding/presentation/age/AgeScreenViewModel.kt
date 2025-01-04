@@ -3,12 +3,11 @@ package com.shubhans.onboarding.presentation.age
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shubhans.core.presentation.utils.UiEvent
 import com.shubhans.core.presentation.utils.UiText
-import com.shubhans.domain.prefrences.Prefrences
+import com.shubhans.domain.prefrences.Preferences
 import com.shubhans.domain.usecases.FitterOutDigit
 import com.shubhans.onboarding.presentation.R
 import kotlinx.coroutines.channels.Channel
@@ -16,7 +15,7 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 class AgeScreenViewModel(
-    private val preference: Prefrences,
+    private val preference: Preferences,
     private val filterOutDigit: FitterOutDigit
 ) : ViewModel() {
     var age by mutableStateOf("20")

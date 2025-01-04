@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shubhans.core.presentation.utils.UiEvent
 import com.shubhans.core.presentation.utils.UiEvent.*
-import com.shubhans.domain.prefrences.Prefrences
+import com.shubhans.domain.prefrences.Preferences
 import com.shubhans.domain.usecases.FitterOutDigit
 import com.shubhans.onboarding.domain.use_cases.ValidateNutrients
 import kotlinx.coroutines.channels.Channel
@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 class NutrientViewModel(
-    private val prefrences: Prefrences,
+    private val prefrences: Preferences,
     private val filterOutDigit: FitterOutDigit,
     private val validateNutrients: ValidateNutrients
 ) : ViewModel() {

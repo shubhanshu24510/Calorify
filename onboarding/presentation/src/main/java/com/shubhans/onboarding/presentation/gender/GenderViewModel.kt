@@ -7,13 +7,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shubhans.core.presentation.utils.UiEvent
 import com.shubhans.domain.model.Gender
-import com.shubhans.domain.prefrences.Prefrences
+import com.shubhans.domain.prefrences.Preferences
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 class GenderScreenViewModel(
-    private val preference: Prefrences
+    private val preference: Preferences
 ) : ViewModel() {
 
     var OnGenderSelected by mutableStateOf<Gender>(Gender.Male)

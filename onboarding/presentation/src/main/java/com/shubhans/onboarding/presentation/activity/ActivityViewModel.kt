@@ -6,16 +6,14 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shubhans.core.presentation.utils.UiEvent
-import com.shubhans.core.presentation.utils.UiText
 import com.shubhans.domain.model.ActivityLevel
-import com.shubhans.domain.prefrences.Prefrences
-import com.shubhans.onboarding.presentation.R
+import com.shubhans.domain.prefrences.Preferences
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 class ActivityViewModel(
-    private val prefrences: Prefrences
+    private val prefrences: Preferences
 ) : ViewModel() {
     var selectedActivityLevel by mutableStateOf<ActivityLevel>(ActivityLevel.Medium)
         private set
