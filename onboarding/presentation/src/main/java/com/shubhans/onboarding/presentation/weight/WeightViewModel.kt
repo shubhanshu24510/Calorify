@@ -23,7 +23,7 @@ class WeightViewModel(
     private val _uiEvent = Channel<UiEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
-    fun onWeightEnter(age: String) {
+    fun onWeightEnter(weight: String) {
         if (weight.length <= 5) {
             this.weight = weight
         }
@@ -31,15 +31,15 @@ class WeightViewModel(
 
     fun OnNextClick() {
         viewModelScope.launch {
-            val WeightNumber = weight.toIntOrNull() ?: run {
+            val WeightNumber = weight.toFloatOrNull() ?: run {
                 _uiEvent.send(
                     UiEvent.showSnackbarMessage(
-                        UiText.StringResource(R.string.weight_cant_be_empty).toString()
+                        UiText.StringResource(R.string.weight_cant_be_empty)
                     )
                 )
                 return@launch
             }
-            preference.saveAge(WeightNumber)
+            preference.saveWeight(WeightNumber)
             _uiEvent.send(UiEvent.Success)
         }
     }

@@ -1,4 +1,7 @@
-package com.shubhans.onboarding.domain.use_cases
+package com.shubhans.onboarding.presentation.model
+
+import com.shubhans.core.presentation.utils.UiText
+import com.shubhans.onboarding.presentation.R
 
 class ValidateNutrients {
     operator fun invoke(
@@ -11,11 +14,15 @@ class ValidateNutrients {
         val fatsRatio = fatsRatioText.toIntOrNull()
 
         if (carbsRatio == null || proteinsRatio == null ||  fatsRatio == null) {
-            return Result.Error("There are not valid values")
+            return Result.Error(
+                UiText.StringResource(R.string.please_enter_valid_values)
+            )
         }
 
         if (carbsRatio + proteinsRatio + fatsRatio != 100) {
-            return Result.Error("The values must add up to 100%")
+            return Result.Error(
+                UiText.StringResource(R.string.sum_of_ratios_should_be_100)
+            )
         }
         return Result.Success(
             carbsRatio = carbsRatio / 100f,
@@ -31,6 +38,6 @@ class ValidateNutrients {
             val fatsRatio: Float
         ) : Result()
 
-        data class Error(val message: String) : Result()
+        data class Error(val message: UiText ) : Result()
     }
 }

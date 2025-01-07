@@ -1,7 +1,7 @@
 package com.shubhans.onboarding.presentation.di
 
 import com.shubhans.domain.usecases.FitterOutDigit
-import com.shubhans.onboarding.domain.use_cases.ValidateNutrients
+import com.shubhans.onboarding.presentation.model.ValidateNutrients
 import com.shubhans.onboarding.presentation.activity.ActivityViewModel
 import com.shubhans.onboarding.presentation.age.AgeScreenViewModel
 import com.shubhans.onboarding.presentation.gender.GenderScreenViewModel

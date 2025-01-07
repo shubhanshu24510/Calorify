@@ -45,7 +45,8 @@ fun ActivityScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
+            .background(MaterialTheme.colorScheme.background)
+            .padding(spacing.spaceLarge),
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -65,7 +66,7 @@ fun ActivityScreen(
             ){
                 SelectableButton(
                     text = stringResource(R.string.low),
-                    isSelected = false,
+                    isSelected = viewModel.selectedActivityLevel is ActivityLevel.Low,
                     color = MaterialTheme.colorScheme.primaryContainer,
                     selectedTextColor = Color.White,
                     onClick = {
@@ -77,7 +78,7 @@ fun ActivityScreen(
                 )
                 SelectableButton(
                     text = stringResource(R.string.medium),
-                    isSelected = false,
+                    isSelected = viewModel.selectedActivityLevel is ActivityLevel.Medium,
                     color = MaterialTheme.colorScheme.primaryContainer,
                     selectedTextColor = Color.White,
                     onClick = {
@@ -89,7 +90,7 @@ fun ActivityScreen(
                 )
                 SelectableButton(
                     text = stringResource(R.string.high),
-                    isSelected = false,
+                    isSelected = viewModel.selectedActivityLevel is ActivityLevel.High,
                     color = MaterialTheme.colorScheme.primaryContainer,
                     selectedTextColor = Color.White,
                     onClick = {
@@ -103,7 +104,7 @@ fun ActivityScreen(
         }
         ActionButton(
             text = stringResource(R.string.next),
-            onClick = { viewModel::OnNextClick},
+            onClick = viewModel::OnNextClick,
             modifier = Modifier
                 .align(Alignment.BottomEnd)
         )

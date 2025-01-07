@@ -15,6 +15,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -28,20 +29,21 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun NutrientGoalScreen(
-    viewModel: NutrientViewModel = koinViewModel(), onNextClick: () -> Unit = {}
+    viewModel: NutrientViewModel = koinViewModel(),
+    onNextClick: () -> Unit = {}
 ) {
     val spacing = LocalSpacing.current
     val snackBarHostState = remember { SnackbarHostState() }
+    val context = LocalContext.current
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
                 is UiEvent.Success -> onNextClick()
                 is UiEvent.showSnackbarMessage -> {
                     snackBarHostState.showSnackbar(
-                        message = event.message.length.toString()
+                        message = event.message.asString(context),
                     )
                 }
-
                 else -> Unit
             }
         }
@@ -50,6 +52,7 @@ fun NutrientGoalScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
+            .padding(spacing.spaceLarge),
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -64,7 +67,8 @@ fun NutrientGoalScreen(
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
 
             UnitTextField(
-                value = viewModel.state.carbonValue, onValueChange = {
+                value = viewModel.state.carbonValue,
+                onValueChange ={
                     viewModel.onAction(action = NutrientGoalAction.enterCarbonRatio(it))
                 },
                 unit = stringResource(R.string.carbs)
@@ -72,16 +76,17 @@ fun NutrientGoalScreen(
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
 
             UnitTextField(
-                value = viewModel.state.proteinsValue, onValueChange = {
+                value = viewModel.state.proteinsValue,
+                onValueChange = {
                     viewModel.onAction(action = NutrientGoalAction.enterProteinRatio(it))
-
                 },
                 unit = stringResource(R.string.proteins)
             )
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
 
             UnitTextField(
-                value = viewModel.state.fatsValue, onValueChange = {
+                value = viewModel.state.fatsValue,
+                onValueChange = {
                     viewModel.onAction(action = NutrientGoalAction.enterFatRatio(it))
                 },
                 unit = stringResource(R.string.fats)
@@ -89,7 +94,9 @@ fun NutrientGoalScreen(
         }
         ActionButton(
             text = stringResource(R.string.next),
-            onClick = { viewModel.onAction(NutrientGoalAction.OnNextClick) },
+            onClick = {
+                viewModel.onAction(action = NutrientGoalAction.OnNextClick)
+            },
             modifier = Modifier.align(Alignment.BottomEnd)
         )
     }

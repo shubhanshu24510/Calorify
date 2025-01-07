@@ -24,7 +24,7 @@ class HeightViewModel(
     private val _uiEvent = Channel<UiEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
-    fun onHeightEnter(age: String) {
+    fun onHeightEnter(height: String) {
         if (height.length <= 3) {
             this.height = filterOutDigit(height)
         }
@@ -35,7 +35,7 @@ class HeightViewModel(
             val heightNumber = height.toIntOrNull() ?: run {
                 _uiEvent.send(
                     UiEvent.showSnackbarMessage(
-                        UiText.StringResource(R.string.height_can_not_be_empty).toString()
+                        UiText.StringResource(R.string.height_can_not_be_empty)
                     )
                 )
                 return@launch

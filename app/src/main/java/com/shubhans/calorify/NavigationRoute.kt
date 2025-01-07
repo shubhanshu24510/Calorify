@@ -1,6 +1,7 @@
 package com.shubhans.calorify
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
@@ -16,14 +17,19 @@ import com.shubhans.onboarding.presentation.height.HeightScreen
 import com.shubhans.onboarding.presentation.nutrient.NutrientGoalScreen
 import com.shubhans.onboarding.presentation.weight.WeightScreen
 import com.shubhans.onboarding.presentation.welcome.WelcomeScreen
+import com.shubhans.tracker.presentation.TrackerScreen
 
 @Composable
-fun NavigationRoute(navController: NavHostController) {
+fun NavigationRoute(
+    navController: NavHostController,
+    modifier: Modifier = Modifier
+) {
     NavHost(
         navController = navController,
         startDestination = "onBoarding"
     ) {
         onBoardingGraph(navController = navController)
+        trackerGraph(navController = navController)
     }
 }
 
@@ -93,9 +99,21 @@ private fun NavGraphBuilder.onBoardingGraph(
         composable(route = "nutrition") {
             NutrientGoalScreen(
                 onNextClick = {
-                    navController.navigate("home")
+                    navController.navigate("tracker")
                 }
             )
+        }
+    }
+}
+
+private fun NavGraphBuilder.trackerGraph(
+    navController: NavController
+) {
+    navigation(
+        startDestination = "trackerHome", route = "tracker"
+    ) {
+        composable(route = "trackerHome") {
+            TrackerScreen()
         }
     }
 }

@@ -16,19 +16,19 @@ class GenderScreenViewModel(
     private val preference: Preferences
 ) : ViewModel() {
 
-    var OnGenderSelected by mutableStateOf<Gender>(Gender.Male)
+    var selectedGender by mutableStateOf<Gender>(Gender.Male)
         private set
 
     private val _uiEvent = Channel<UiEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
     fun OnGenderSelected(gender: Gender) {
-        OnGenderSelected = gender
+        selectedGender = gender
     }
 
     fun OnNextClick() {
         viewModelScope.launch {
-            preference.saveGender(OnGenderSelected)
+            preference.saveGender(selectedGender)
             _uiEvent.send(UiEvent.Success)
         }
     }

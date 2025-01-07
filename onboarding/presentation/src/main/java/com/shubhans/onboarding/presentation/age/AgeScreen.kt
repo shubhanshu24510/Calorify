@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.ScaffoldDefaults
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -42,11 +41,10 @@ fun AgeScreen(
                 is UiEvent.Success -> onNextClick()
                 is UiEvent.showSnackbarMessage -> {
                     snackBarHostState.showSnackbar(
-                        message = event.message
+                        message = event.message.asString(context)
                     )
                 }
-
-                else -> {}
+                else -> Unit
             }
         }
     }
@@ -54,6 +52,7 @@ fun AgeScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
+            .padding(spacing.spaceLarge),
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -68,13 +67,13 @@ fun AgeScreen(
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
             UnitTextField(
                 value = viewModel.age,
-                onValueChange = {},
+                onValueChange = viewModel::onAgeEnter,
                 unit = stringResource(R.string.years)
             )
         }
         ActionButton(
             text = stringResource(R.string.next),
-            onClick = { viewModel::OnNextClick },
+            onClick = viewModel::OnNextClick,
             modifier = Modifier
                 .align(Alignment.BottomEnd)
         )

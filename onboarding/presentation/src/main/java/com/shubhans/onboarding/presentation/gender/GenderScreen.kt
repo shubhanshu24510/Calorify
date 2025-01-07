@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.shubhans.core.presentation.design_system.CalorifyTheme
 import com.shubhans.core.presentation.design_system.LocalSpacing
 import com.shubhans.core.presentation.utils.UiEvent
+import com.shubhans.domain.model.Gender
 import com.shubhans.onboarding.presentation.R
 import com.shubhans.onboarding.presentation.components.ActionButton
 import com.shubhans.onboarding.presentation.components.SelectableButton
@@ -32,6 +33,7 @@ fun GenderScreen(
     onNextClick: () -> Unit = {},
     viewModel: GenderScreenViewModel = koinViewModel()
 ) {
+    val spacing = LocalSpacing.current
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
@@ -40,11 +42,11 @@ fun GenderScreen(
             }
         }
     }
-    val spacing = LocalSpacing.current
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
+            .background(MaterialTheme.colorScheme.background)
+            .padding(spacing.spaceLarge),
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -64,20 +66,22 @@ fun GenderScreen(
             ) {
                 SelectableButton(
                     text = stringResource(R.string.male),
-                    isSelected = false,
+                    isSelected = viewModel.selectedGender is Gender.Male,
                     color = MaterialTheme.colorScheme.primaryContainer,
                     selectedTextColor = Color.White,
-                    onClick = {},
+                    onClick = {
+                        viewModel.OnGenderSelected(Gender.Male)},
                     textStyle = MaterialTheme.typography.bodyLarge.copy(
                         fontWeight = FontWeight.Normal
                     )
                 )
                 SelectableButton(
                     text = stringResource(R.string.female),
-                    isSelected = false,
+                    isSelected = viewModel.selectedGender is Gender.Female,
                     color = MaterialTheme.colorScheme.primaryContainer,
                     selectedTextColor = Color.White,
-                    onClick = {},
+                    onClick = {
+                        viewModel.OnGenderSelected(Gender.Female)},
                     textStyle = MaterialTheme.typography.bodyLarge.copy(
                         fontWeight = FontWeight.Normal
                     )
@@ -86,7 +90,7 @@ fun GenderScreen(
         }
         ActionButton(
             text = stringResource(R.string.next),
-            onClick = { viewModel::OnNextClick },
+            onClick = viewModel::OnNextClick,
             modifier = Modifier.align(Alignment.BottomEnd)
         )
     }

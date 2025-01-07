@@ -15,6 +15,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,17 +36,19 @@ fun HeightScreen(
 ) {
     val spacing = LocalSpacing.current
     val snackBarHostState = remember { SnackbarHostState() }
+    val context = LocalContext.current
 
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
                 is UiEvent.Success -> onNextClick()
                 is UiEvent.showSnackbarMessage -> {
-                     snackBarHostState.showSnackbar(
-                         message = event.message.length.toString()
-                     )
+                    snackBarHostState.showSnackbar(
+                        message = event.message.asString(context)
+                    )
                 }
-                else -> { }
+
+                else -> Unit
             }
         }
     }
@@ -53,6 +56,7 @@ fun HeightScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
+            .padding(spacing.spaceLarge),
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -67,12 +71,13 @@ fun HeightScreen(
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
             UnitTextField(
                 value = viewModel.height,
-                onValueChange = {},
-                unit = stringResource(R.string.cm))
+                onValueChange = viewModel::onHeightEnter,
+                unit = stringResource(R.string.cm)
+            )
         }
         ActionButton(
             text = stringResource(R.string.next),
-            onClick = { viewModel::OnNextClick },
+            onClick = viewModel::OnNextClick,
             modifier = Modifier
                 .align(Alignment.BottomEnd)
         )

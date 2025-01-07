@@ -15,6 +15,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -32,13 +33,14 @@ fun WeightScreen(
     onNextClick: () -> Unit = {}
 ) {
     val snackBarHostState = remember { SnackbarHostState() }
+    val context = LocalContext.current
     LaunchedEffect(key1 = true) {
         viewModel.uiEvent.collect { event ->
             when (event) {
                 is UiEvent.Success -> onNextClick()
                 is UiEvent.showSnackbarMessage -> {
                     snackBarHostState.showSnackbar(
-                        message = event.message.length.toString()
+                        message = event.message.asString(context),
                     )
                 }
                 else -> {}
@@ -50,6 +52,7 @@ fun WeightScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
+            .padding(spacing.spaceLarge),
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -64,15 +67,14 @@ fun WeightScreen(
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
             UnitTextField(
                 value = viewModel.weight,
-                onValueChange = {},
+                onValueChange =viewModel::onWeightEnter,
                 unit = stringResource(R.string.kg)
             )
         }
         ActionButton(
             text = stringResource(R.string.next),
-            onClick = { viewModel::OnNextClick },
-            modifier = Modifier
-                .align(Alignment.BottomEnd)
+            onClick = viewModel::OnNextClick,
+            modifier = Modifier.align(Alignment.BottomEnd)
         )
     }
 }

@@ -35,7 +35,7 @@ class AgeScreenViewModel(
             val ageNumber = age.toIntOrNull() ?: run {
                 _uiEvent.send(
                     UiEvent.showSnackbarMessage(
-                        UiText.StringResource(R.string.age_cant_be_empty).toString()
+                        UiText.StringResource(R.string.age_cant_be_empty)
                     )
                 )
                 return@launch
