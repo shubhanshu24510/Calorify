@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -21,7 +22,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.shubhans.core.presentation.design_system.CalorifyTheme
+import com.shubhans.core.presentation.design_system.CarbColor
+import com.shubhans.core.presentation.design_system.FatColor
 import com.shubhans.core.presentation.design_system.LocalSpacing
+import com.shubhans.core.presentation.design_system.ProteinColor
 import com.shubhans.core.presentation.design_system.Typography
 import com.shubhans.tracker.presentation.R
 
@@ -33,10 +37,13 @@ fun TrackerHeader(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .heightIn(400.dp)
+            .heightIn(340.dp)
             .clip(RoundedCornerShape(bottomStart = 50.dp, bottomEnd = 50.dp))
             .background(MaterialTheme.colorScheme.primary)
-            .padding(spacing.spaceLarge)
+            .padding(
+                horizontal = spacing.spaceLarge,
+                vertical = spacing.spaceExtraLarge
+            )
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -68,15 +75,43 @@ fun TrackerHeader(
             }
         }
         Spacer(modifier = Modifier.height(spacing.spaceSmall))
-        HeaderBar(
-            modifier = Modifier.fillMaxWidth()
-                .heightIn(30.dp),
-            carbsRatio = 10,
-            proteinsRatio = 60,
-            fatsRatio = 30,
-            calories = 300,
-            caloriesGoal = 2365,
+        NutrientsBar(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(30.dp),
+            carbs = 60,
+            protein = 30,
+            fat = 10,
+            calories = 2000,
+            calorieGoal = 2490
         )
+        Spacer(modifier = Modifier.height(spacing.spaceLarge))
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            NutritionBarInfo(
+                modifier = Modifier.size(90.dp),
+                name = stringResource(id = R.string.carbs),
+                value = 20,
+                goal = 100,
+                color = CarbColor,
+            )
+            NutritionBarInfo(
+                modifier = Modifier.size(90.dp),
+                name = stringResource(id = R.string.proteins),
+                value = 30,
+                goal = 100,
+                color = ProteinColor,
+            )
+            NutritionBarInfo(
+                modifier = Modifier.size(90.dp),
+                name = stringResource(id = R.string.fats),
+                value = 40,
+                goal = 100,
+                color = FatColor,
+            )
+        }
     }
 }
 

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="your_goal">Your goal:</string>
+    <string name="grams">g</string>
+    <string name="carbs">Carbs</string>
+    <string name="proteins">Protein</string>
+    <string name="fats">Fat</string>
 </resources>
