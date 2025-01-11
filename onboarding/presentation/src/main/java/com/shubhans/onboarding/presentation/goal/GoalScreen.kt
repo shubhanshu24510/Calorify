@@ -58,7 +58,7 @@ fun GoalScreen(
                 text = stringResource(R.string.lose_keep_gain_weight),
                 textAlign = TextAlign.Start,
                 style = MaterialTheme.typography.headlineSmall,
-                color = MaterialTheme.colorScheme.onSurface
+                color = Color.White
             )
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
             Row(

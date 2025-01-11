@@ -11,6 +11,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.shubhans.core.presentation.design_system.CalorifyTheme
+import com.shubhans.core.presentation.design_system.LocalSpacing
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,10 +20,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             CalorifyTheme {
                 val navController = rememberNavController()
+                val spacing = LocalSpacing.current
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     NavigationRoute(
                         navController = navController,
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier
+                            .padding(innerPadding)
+                            .padding(spacing.spaceExtraLarge)
                     )
                 }
             }

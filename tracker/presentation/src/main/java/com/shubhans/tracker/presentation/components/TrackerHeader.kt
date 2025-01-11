@@ -37,12 +37,11 @@ fun TrackerHeader(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .heightIn(340.dp)
             .clip(RoundedCornerShape(bottomStart = 50.dp, bottomEnd = 50.dp))
             .background(MaterialTheme.colorScheme.primary)
             .padding(
                 horizontal = spacing.spaceLarge,
-                vertical = spacing.spaceExtraLarge
+                vertical = spacing.spaceLarge
             )
     ) {
         Row(
@@ -79,9 +78,9 @@ fun TrackerHeader(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(30.dp),
-            carbs = 60,
-            protein = 30,
-            fat = 10,
+            carbs = 200,
+            protein = 100,
+            fat = 100,
             calories = 2000,
             calorieGoal = 2490
         )
@@ -93,21 +92,21 @@ fun TrackerHeader(
             NutritionBarInfo(
                 modifier = Modifier.size(90.dp),
                 name = stringResource(id = R.string.carbs),
-                value = 20,
+                value = 40,
                 goal = 100,
                 color = CarbColor,
             )
             NutritionBarInfo(
                 modifier = Modifier.size(90.dp),
                 name = stringResource(id = R.string.proteins),
-                value = 30,
+                value = 40,
                 goal = 100,
                 color = ProteinColor,
             )
             NutritionBarInfo(
                 modifier = Modifier.size(90.dp),
                 name = stringResource(id = R.string.fats),
-                value = 40,
+                value = 50,
                 goal = 100,
                 color = FatColor,
             )

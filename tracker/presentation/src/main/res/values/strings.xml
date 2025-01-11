@@ -5,4 +5,9 @@
     <string name="carbs">Carbs</string>
     <string name="proteins">Protein</string>
     <string name="fats">Fat</string>
+    <string name="today">Today</string>
+    <string name="tomarrow">Tomorrow</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="previous_day">Previous Day</string>
+    <string name="next_day">Next Day</string>
 </resources>

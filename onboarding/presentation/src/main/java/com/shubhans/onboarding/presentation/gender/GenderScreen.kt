@@ -57,7 +57,6 @@ fun GenderScreen(
                 text = stringResource(R.string.what_gender),
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.headlineSmall,
-                color = MaterialTheme.colorScheme.onSurface
             )
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
             Row(

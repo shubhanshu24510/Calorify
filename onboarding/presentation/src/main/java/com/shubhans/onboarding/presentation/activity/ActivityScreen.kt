@@ -57,13 +57,13 @@ fun ActivityScreen(
                 text = stringResource(R.string.activity_level),
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.headlineSmall,
-                color = MaterialTheme.colorScheme.onSurface
+                color = Color.White
             )
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
             Row(
                 modifier = Modifier,
                 horizontalArrangement = Arrangement.spacedBy(spacing.spaceMedium)
-            ){
+            ) {
                 SelectableButton(
                     text = stringResource(R.string.low),
                     isSelected = viewModel.selectedActivityLevel is ActivityLevel.Low,
