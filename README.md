@@ -9,7 +9,7 @@ Calorify is a multi-module Health Tracking apps that monitors health and Nutrien
 
 ### Previews
 
-![Screenshot_20250112-193543](https://github.com/user-attachments/assets/03c12b51-6765-4439-bf34-60718973eb73)
+<img src="https://github.com/user-attachments/assets/03c12b51-6765-4439-bf34-60718973eb73" alt="Screenshot" width="300" />
 
 
 
