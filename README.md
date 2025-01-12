@@ -9,17 +9,16 @@ Calorify is a multi-module Health Tracking apps that monitors health and Nutrien
 
 ### Previews
 <p align="center">
-<img src="![Screenshot_20250112-193622](https://github.com/user-attachments/assets/6304a2e3-50e8-49d0-97d1-747af6ac1536)" alt="drawing" width="270px" />
-<img src="![Screenshot_20250112-193625](https://github.com/user-attachments/assets/a4159984-2322-460d-8ee3-968ae32c6f3a)" alt="drawing" width="270px" />
-<img src="![Screenshot_20250112-193653](https://github.com/user-attachments/assets/76184272-cfe6-45ad-a09c-c415f0f59c51)" alt="drawing" width="270px" /> 
-<img src="![![Screenshot_20250112-193543](https://github.com/user-attachments/assets/3f2b79b3-4b02-478d-80ed-3c6ee1cce218)" alt="drawing" width="270px" />
-<img src =![Screenshot_20250112-193604](https://github.com/user-attachments/assets/97f79fc1-176e-47fe-b15b-6b401d6a5cb3) alt="drawing" width="270px" />
-<img src =![Screenshot_20250112-193608](https://github.com/user-attachments/assets/6fa32249-65e9-4d84-b1c8-36d003395c42) alt="drawing" width="270px" />
-<img src =![Screenshot_20250112-193611](https://github.com/user-attachments/assets/2777690d-0a1d-4f90-9f06-ed2cf18ee202) alt="drawing" width="270px" />
-<img src =![Screenshot_20250112-193613](https://github.com/user-attachments/assets/a85e5eea-c5c0-4822-b3da-7d21b4393ada)  alt="drawing" width="270px" />
-<img src =![Screenshot_20250112-193616](https://github.com/user-attachments/assets/48d592a7-383a-4d11-9494-d38f2493bda8)  alt="drawing" width="270px" />
-<img src =![Screenshot_20250112-193619](https://github.com/user-attachments/assets/230cf7c4-f180-4dfd-b347-252a6df26ec8)  alt="drawing" width="270px" />
-</br>
+![Screenshot_20250112-193622](https://github.com/user-attachments/assets/93d05519-8310-43c2-9fa5-bf4c7b4ff169)
+![Screenshot_20250112-193625](https://github.com/user-attachments/assets/3c5b25d3-cdf0-4be7-8a21-61e0acbfb9f4)
+![Screenshot_20250112-193653](https://github.com/user-attachments/assets/22126cb7-89c5-4831-9825-d3b9a99715a9)
+![Screenshot_20250112-193543](https://github.com/user-attachments/assets/540bd37c-9358-4655-9b67-1ca568f02562)
+![Screenshot_20250112-193604](https://github.com/user-attachments/assets/48b6ee1e-c235-4945-bb51-f5a87bfd0d17)
+![Screenshot_20250112-193608](https://github.com/user-attachments/assets/e8a8cabc-2c0c-493e-a497-48beb3ea8435)
+![Screenshot_20250112-193611](https://github.com/user-attachments/assets/3bd7e4ec-dc49-4d38-8577-8be0a53af84b)
+![Screenshot_20250112-193613](https://github.com/user-attachments/assets/827e1344-0293-4931-bf06-4bf366eec4b1)
+![Screenshot_20250112-193616](https://github.com/user-attachments/assets/6ea98354-57a7-42cf-a58c-61c2b3afe467)
+![Screenshot_20250112-193619](https://github.com/user-attachments/assets/fc4213b3-0559-4547-91c7-c24724062220)
 </p>
 
 
