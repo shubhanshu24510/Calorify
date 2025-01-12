@@ -1,5 +1,6 @@
-package com.shubhans.tracker.presentation.components
+package com.shubhans.tracker.presentation.tracker_Overview.components
 
+import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -28,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import com.shubhans.core.presentation.design_system.CalorifyTheme
 import com.shubhans.core.presentation.design_system.DarkGray
 import com.shubhans.tracker.presentation.R
+import com.shubhans.tracker.presentation.components.HeaderUnit
 
 @Composable
 fun NutritionBarInfo(
@@ -41,7 +43,7 @@ fun NutritionBarInfo(
     val background = MaterialTheme.colorScheme.background
     val goalExceededColor = MaterialTheme.colorScheme.error
     val angleRatio = remember {
-        androidx.compose.animation.core.Animatable(0f)
+        Animatable(0f)
     }
 
     LaunchedEffect(key1 = true) {

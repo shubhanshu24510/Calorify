@@ -1,4 +1,4 @@
-package com.shubhans.tracker.presentation.components
+package com.shubhans.tracker.presentation.tracker_Overview.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
