@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="your_goal">Your goal:</string>
+    <string name="grams">g</string>
+    <string name="carbs">Carbs</string>
+    <string name="proteins">Protein</string>
+    <string name="fats">Fat</string>
+    <string name="today">Today</string>
+    <string name="tomarrow">Tomorrow</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="previous_day">Previous Day</string>
+    <string name="next_day">Next Day</string>
+</resources>

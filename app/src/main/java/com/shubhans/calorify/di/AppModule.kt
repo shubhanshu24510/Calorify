@@ -7,6 +7,7 @@ import com.shubhans.calorify.CalorifyApp
 import kotlinx.coroutines.CoroutineScope
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
+import java.util.prefs.Preferences
 
 val appModule = module {
     single<SharedPreferences> {

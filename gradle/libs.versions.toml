@@ -1,5 +1,6 @@
 [versions]
-agp = "8.9.0-alpha07"
+accompanistSystemuicontroller = "0.27.0"
+agp = "8.9.0-alpha09"
 kotlin = "2.1.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -11,7 +12,7 @@ composeBom = "2024.12.01"
 appcompat = "1.7.0"
 material = "1.12.0"
 jetbrainsKotlinJvm = "2.0.0"
-androidTools = "31.7.3"
+androidTools = "31.8.0"
 playFeatureDelivery = "2.1.0"
 coreSplashscreen = "1.0.1"
 coilCompose = "2.7.0"
@@ -43,6 +44,7 @@ projectCompileSdkVersion = "35"
 projectVersionCode = "1"
 
 [libraries]
+accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanistSystemuicontroller" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -94,6 +96,8 @@ koin-android-workmanager = { group = "io.insert-koin", name = "koin-androidx-wor
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
 koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
+
+
 
 # Gradle
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }

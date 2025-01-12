@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,15 +22,13 @@ import com.shubhans.onboarding.presentation.components.ActionButton
 
 @Composable
 fun WelcomeScreen(
-    modifier: Modifier = Modifier,
-    onNextClick: () -> Unit = {}
+    onNextClick: () -> Unit
 ) {
     val spacing = LocalSpacing.current
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(spacing.spaceMedium)
             .background(MaterialTheme.colorScheme.background),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -38,7 +37,7 @@ fun WelcomeScreen(
             text = stringResource(R.string.welcome),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.headlineLarge,
-            color = MaterialTheme.colorScheme.onSurface
+            color = Color.White
         )
         Spacer(modifier = Modifier.padding(spacing.spaceMedium))
 
@@ -55,6 +54,8 @@ fun WelcomeScreen(
 @Composable
 private fun WelcomeScreenPreview() {
     CalorifyTheme {
-        WelcomeScreen()
+        WelcomeScreen(
+            onNextClick = {}
+        )
     }
 }

@@ -33,7 +33,7 @@ fun SelectableButton(
             .clip(RoundedCornerShape(100))
             .border(
                 width = 2.dp,
-                color = if (isSelected) selectedTextColor else color,
+                color = if (isSelected) Color.Transparent else color,
                 shape = RoundedCornerShape(100)
             )
             .background(

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.Calorify" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.Caloric" parent="android:Theme.Material.NoActionBar.Fullscreen">
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>

@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.calorify.android.application.compose)
-    alias(libs.plugins.calorify.jvm.retrofit)
+//    alias(libs.plugins.calorify.jvm.retrofit)
 }
 
 android {
@@ -8,6 +8,9 @@ android {
 
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
     packaging {
         resources {
@@ -31,6 +34,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.accompanist.systemuicontroller)
+
 
     // Core
     implementation(libs.androidx.core.ktx)

@@ -23,11 +23,11 @@ private val LightColorPalette = lightColorScheme(
     primary = BrightGreen,
     primaryContainer = DarkGreen,
     secondary = Orange,
-    background = Color.White,
-    onBackground = DarkGray,
+    background = MediumGray,
+    onBackground = Color.White,
     surface = Color.White,
     onSurface = DarkGray,
-    onPrimary = Color.White,
+    onPrimary = DarkGray,
     onSecondary = Color.White,
 )
 
