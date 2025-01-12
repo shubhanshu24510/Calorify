@@ -6,6 +6,7 @@ import com.google.android.play.core.splitcompat.SplitCompat
 import com.shubhans.calorify.di.appModule
 import com.shubhans.data.di.coreDataModule
 import com.shubhans.onboarding.presentation.di.onboardingPresentationModule
+import com.shubhans.tracker.presentation.di.trackerUiModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import org.koin.android.ext.koin.androidContext
@@ -22,7 +23,8 @@ class CalorifyApp : Application() {
             modules(
                 appModule,
                 onboardingPresentationModule,
-                coreDataModule
+                coreDataModule,
+                trackerUiModule
             )
         }
     }

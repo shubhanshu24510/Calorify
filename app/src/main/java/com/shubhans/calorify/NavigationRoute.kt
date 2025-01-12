@@ -8,7 +8,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import androidx.navigation.compose.rememberNavController
 import com.shubhans.onboarding.presentation.activity.ActivityScreen
 import com.shubhans.onboarding.presentation.age.AgeScreen
 import com.shubhans.onboarding.presentation.gender.GenderScreen
@@ -17,7 +16,7 @@ import com.shubhans.onboarding.presentation.height.HeightScreen
 import com.shubhans.onboarding.presentation.nutrient.NutrientGoalScreen
 import com.shubhans.onboarding.presentation.weight.WeightScreen
 import com.shubhans.onboarding.presentation.welcome.WelcomeScreen
-import com.shubhans.tracker.presentation.TrackerScreen
+import com.shubhans.tracker.presentation.tracker_Overview.tracker.TrackerScreen
 
 @Composable
 fun NavigationRoute(

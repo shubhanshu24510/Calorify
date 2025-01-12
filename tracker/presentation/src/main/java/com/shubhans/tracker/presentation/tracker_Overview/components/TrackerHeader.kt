@@ -1,4 +1,4 @@
-package com.shubhans.tracker.presentation.components
+package com.shubhans.tracker.presentation.tracker_Overview.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -28,6 +27,7 @@ import com.shubhans.core.presentation.design_system.LocalSpacing
 import com.shubhans.core.presentation.design_system.ProteinColor
 import com.shubhans.core.presentation.design_system.Typography
 import com.shubhans.tracker.presentation.R
+import com.shubhans.tracker.presentation.components.HeaderUnit
 
 @Composable
 fun TrackerHeader(
@@ -41,7 +41,7 @@ fun TrackerHeader(
             .background(MaterialTheme.colorScheme.primary)
             .padding(
                 horizontal = spacing.spaceLarge,
-                vertical = spacing.spaceLarge
+                vertical = spacing.spaceExtraLarge
             )
     ) {
         Row(

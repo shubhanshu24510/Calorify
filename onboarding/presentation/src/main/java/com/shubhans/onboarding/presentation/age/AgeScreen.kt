@@ -52,7 +52,8 @@ fun AgeScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
-            .padding(spacing.spaceLarge),
+            .padding(spacing.spaceLarge)
+            .padding(vertical = spacing.spaceLargeVertical),
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),

@@ -20,13 +20,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             CalorifyTheme {
                 val navController = rememberNavController()
-                val spacing = LocalSpacing.current
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(
+                    modifier = Modifier
+                        .fillMaxSize()
+                ) { innerPadding ->
                     NavigationRoute(
                         navController = navController,
                         modifier = Modifier
                             .padding(innerPadding)
-                            .padding(spacing.spaceExtraLarge)
                     )
                 }
             }

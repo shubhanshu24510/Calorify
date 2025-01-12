@@ -19,6 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.shubhans.core.presentation.design_system.CalorifyTheme
 import com.shubhans.core.presentation.design_system.LocalSpacing
 import com.shubhans.core.presentation.utils.UiEvent
@@ -46,7 +47,8 @@ fun ActivityScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
-            .padding(spacing.spaceLarge),
+            .padding(spacing.spaceLarge)
+            .padding(vertical = spacing.spaceLargeVertical),
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
