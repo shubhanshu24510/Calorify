@@ -1,4 +1,5 @@
-### Calorify
+<h1 style="text-align: center; font-size: 3em;">Calorify</h1>
+
 Calorify is a multi-module Health Tracking apps that monitors health and Nutrient data tracks for using User Physical Health data information.
  
 ### Technology Used in This Project?
