@@ -1,8 +1,7 @@
 <div style="text-align: center;">
   <h1>Calorify</h1>
 </div>
-Calorify is a multi-module Health Tracking apps that monitors health and Nutrient data tracks for using User Physical Health data information.
- 
+Calorify is a multi-module health tracking app designed to monitor and track users' health and nutritional data using their physical health information.  
 ### Technology Used in This Project?
 - Offline-first development App
 - Multi-module MVVM architecture
