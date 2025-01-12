@@ -25,14 +25,6 @@ Calorify is a multi-module health tracking app designed to monitor and track use
   <img src="https://github.com/user-attachments/assets/09afd023-29fc-43ba-abcf-a5f8fdbd23fe" alt="Screenshot 6" style="width: 140px; position: absolute; animation: slideshow 14s infinite 10s;" />
 </div>
 
-<style>
-@keyframes slideshow {
-  0% { opacity: 0; transform: scale(1); }
-  12.5% { opacity: 1; transform: scale(1.1); }
-  25% { opacity: 0; transform: scale(1); }
-  100% { opacity: 0; }
-}
-</style>
 
 
 
